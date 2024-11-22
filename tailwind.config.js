@@ -1,13 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./resources/**/*.blade.php",
-    "./resources/**/*.js",
-    "./resources/**/*.vue",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+    darkMode: "selector",
+    content: [
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
+    ],
+    theme: {
+        extend: {
+            fontFamily: {
+                'myFont': ["Montserrat", "sans-serif"]
+            }
+        },
+    },
+    plugins: [
+        import('@tailwindcss/forms'),
+    ],
 }
 
