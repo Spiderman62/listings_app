@@ -19,11 +19,10 @@ class VerificationController extends Controller
     public function handler(EmailVerificationRequest $request)
     {
         $request->fulfill();
-
         return redirect()->route('home');
     }
     public function resend(Request $request) {
         $request->user()->sendEmailVerificationNotification();
-        return back()->with('message', 'Verification link sent!');
+        return back()->with('status', 'Verification link sent!');
     }
 }
